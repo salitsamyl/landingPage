@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pembelian</title>
+    <script src="jquery.js"></script>
+    <style>
+        /* Background gradient lebih lembut */
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Kontainer form dengan desain minimalis */
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Styling teks heading */
+        h2 {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        /* Gaya input dan select */
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box; /* memastikan padding dan border tidak mempengaruhi lebar input */
+            transition: all 0.3s ease-in-out;
+        }
+
+        input:focus, select:focus {
+            border-color: #00bcd4;
+            outline: none;
+            box-shadow: 0px 0px 5px rgba(77, 115, 120, 0.5);
+        }
+
+        /* Styling label */
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        /* Tombol submit dengan efek glossy */
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #1a1d43, #00838f);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #151080, #006064);
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Form Pembelian</h2>
+        <form id="formPembelian">
+            <label for="nama">Nama Lengkap:</label>
+            <input type="text" id="nama" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="alamat">Alamat:</label>
+            <input type="text" id="alamat" required>
+
+            <label for="produk">Pilih Produk:</label>
+            <select id="produk">
+                <option value="Produk A">Ventela Back to 70's High White</option>
+                <option value="Produk B">Ventela Back to 70's High Navy</option>
+                <option value="Produk C">Ventela Back to 70's High Grey</option>
+                <option value="Produk D">Ventela Back to 70's High Dark Red</option>
+            </select>
+
+            <button type="submit">Kirim</button>
+        </form>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $("#formPembelian").submit(function(event){
+                event.preventDefault();
+                alert("Terima kasih telah mengisi form! Pesanan Anda sedang diproses.");
+                window.location.href = "index.html";
+            });
+        });
+    </script>
+
+</body>
+</html>

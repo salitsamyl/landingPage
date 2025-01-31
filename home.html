@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar Berubah Saat Scroll</title>
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <img src="img/logo.png" alt="Logo" />
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="index.html">Product</a></li>
+      </ul>
+    </nav>
+    <section id="home">
+      <div id="slider">
+        <img src="img/1.jpg" class="active" alt="Slide 1" />
+        <img src="img/2.jpg" alt="Slide 2" />
+        <img src="img/3.jpg" alt="Slide 3" />
+        <img src="img/5.jpg" alt="Slide 4" />
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        &copy; 2025 Ventela. Semua hak cipta dilindungi. <br />
+        <a href="https://ventelashoes.com/">Kunjungi kami</a> untuk lebih banyak
+        produk.
+      </p>
+    </footer>
+
+    <script>
+      let currentIndex = 0;
+      const images = $("#slider img");
+      const totalImages = images.length;
+
+      function changeSlide() {
+        $(images[currentIndex]).removeClass("active");
+        currentIndex = (currentIndex + 1) % totalImages;
+        $(images[currentIndex]).addClass("active");
+      }
+
+      setInterval(changeSlide, 3000); 
+
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 50) {
+          $("#navbar").addClass("scrolled");
+        } else {
+          $("#navbar").removeClass("scrolled");
+        }
+      });
+    </script>
+  </body>
+</html>
